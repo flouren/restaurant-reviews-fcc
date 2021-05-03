@@ -30,19 +30,19 @@ export default class ReviewsController{
             const text = req.body.text
             const date = new Date()
 
-            const ReviewResponse = await ReviewsDAO.apiUpdateReview(
+            const reviewResponse = await ReviewsDAO.updateReview(
                 reviewId,
                 req.body.user_id,
                 text,
                 date,
             )
 
-            var {error} = ReviewResponse
+            var {error} = reviewResponse
             if(error){
                 res.status(400).json({error})
             }
 
-            if(ReviewResponse.modifiedCount === 0){
+            if(reviewResponse.modifiedCount === 0){
                 throw new Error(
                     'Unable to update review - user may not be original poster',
                 )
