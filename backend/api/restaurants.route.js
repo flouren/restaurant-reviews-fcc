@@ -6,7 +6,7 @@ const router = express.Router()
 
 router.get('/',RestaurantsCtrl.apiGetRestaurants)
 router.get('/id/:id',RestaurantsCtrl.apiGetRestaurantById)
-router.get('/cuisines',RestaurantsCtrl.apiGetRestaurantsCuisines)
+router.get('/cuisines',RestaurantsCtrl.apiGetRestaurantCuisines)
 
 router.post('/review', ReviewsCtrl.apiPostReview)
 router.put('/review', ReviewsCtrl.apiUpdateReview)
