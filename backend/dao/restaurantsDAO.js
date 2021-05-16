@@ -1,4 +1,5 @@
-//import { ObjectId } from "bson";
+import mongodb from 'mongodb'
+const ObjectId = mongodb.ObjectID
 
 let restaurants
 
@@ -52,9 +53,10 @@ export default class RestaurantsDAO{
         }
     }
 
-    static async getRestaurantById(id){
+    static async getRestaurantByID(id){
         try {
-            const pipeline = [{
+            const pipeline = [
+            {
                 $match:{
                     _id:new ObjectId(id),
                 },
@@ -69,7 +71,7 @@ export default class RestaurantsDAO{
                             {
                                 $match:{
                                     $expr:{
-                                        $eq:["restaurant_id","$$id"],
+                                        $eq:["$restaurant_id","$$id"],
                                     },
                                 },
                             },
