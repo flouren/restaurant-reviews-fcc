@@ -7,7 +7,7 @@ https://www.youtube.com/watch?v=mrHNSanmqQ4
 # backend finished and working!
 
 
-# frontend started!
+# frontend in progress!
 
-1:12:00
+1:30:00
 
