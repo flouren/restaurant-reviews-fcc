@@ -7,8 +7,8 @@ class RestaurantDataService {
     }
 
     get(id){
-        // return httpCommon.get(`/id/${id}`)
-        return httpCommon.get(`/restaurant?id=${id}`);
+        return httpCommon.get(`/id/${id}`)
+        // return httpCommon.get(`/restaurant?id=${id}`);
     }
 
     find(query, by = "name", page = 0){
@@ -22,6 +22,10 @@ class RestaurantDataService {
     updateReview(data){
         //return httpCommon.delete(`/review?id=${id}`)
         return httpCommon.put("/review-edit", data);
+    }
+
+    deleteReview(id,userId){
+        return httpCommon.delete(`/review-delete?id=${id}`, {data:{user_id:userId}});
     }
 
     getCuisines(id){
