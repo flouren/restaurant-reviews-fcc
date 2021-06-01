@@ -2,8 +2,8 @@ import httpCommon from "../http-common";
 
 class RestaurantDataService {
     getAll(page = 0){
-        // return httpCommon.get(`?page${page}`)
-        return httpCommon.get(`restaurants?page=${page}`);
+        return httpCommon.get(`?page=${page}`)
+        // return httpCommon.get(`restaurants?page=${page}`);
     }
 
     get(id){
