@@ -69,7 +69,7 @@ const RestaurantsList= props => {
   }
 
   const findByName = () => {
-    find(searchCuisine, "name")
+    find(searchName, "name")
   }
   const findByZip = () => {
     find(searchZip, "zipcode")
