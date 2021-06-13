@@ -21,11 +21,11 @@ class RestaurantDataService {
 
     updateReview(data){
         //return httpCommon.delete(`/review?id=${id}`)
-        return httpCommon.put("/review-edit", data);
+        return httpCommon.put("/review", data);
     }
 
     deleteReview(id,userId){
-        return httpCommon.delete(`/review-delete?id=${id}`, {data:{user_id:userId}});
+        return httpCommon.delete(`/review?id=${id}`, {data:{user_id:userId}});
     }
 
     getCuisines(id){
